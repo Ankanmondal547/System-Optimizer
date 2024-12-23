@@ -1,0 +1,61 @@
+﻿<Window x:Class="SystemOptimizerUI.BoostSystem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemOptimizerUI"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="BoostSystem" Height="450" Width="800">
+    <Grid Background="#e8e8e8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <!-- Left Half for Photo -->
+            <ColumnDefinition Width="2*"/>
+            <!-- Right Half for Options -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Half: Display a photo -->
+        <Image Grid.Column="0" Source="/Image/temp.jpeg" Stretch="UniformToFill"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+        <!-- Right Half: Options -->
+            <StackPanel Grid.Row="0" VerticalAlignment="Top" Margin="20">
+                <TextBlock Text="Choose Optimization Features to Enhance Performance" FontSize="18" FontWeight="Bold" Margin="0,0,0,10" Foreground="#595757"/>
+
+                <!-- Checkbox Options -->
+                <CheckBox x:Name="CleanTempFilesCheckBox" Content="Clean Temporary Files" Margin="0,0,0,5" Foreground="black" FontWeight="Bold" FontSize="12"/>
+                <TextBlock Text="Cleaning temporary files helps improve system performance by freeing up disk space, reducing clutter, and preventing software errors. It also enhances privacy by removing sensitive data and speeds up system boot times and application performance. Regular cleaning ensures your computer runs smoothly and efficiently." Margin="20  0 5 5 " FontSize="10px" TextWrapping="Wrap"></TextBlock>
+                <CheckBox x:Name="ListStartupProgramsCheckBox" Content="List Startup Programs" Margin="0,0,0,5" Foreground="black" FontWeight="Bold" FontSize="12"/>
+                <TextBlock Text="Listing startup programs allows you to identify and manage which applications automatically start when your computer boots up. Disabling unnecessary startup programs can improve boot times, free up system resources, and enhance overall performance. It ensures that only essential applications run in the background, helping your system run more efficiently." Margin="20  0 5 5 " FontSize="10px" TextWrapping="Wrap"></TextBlock>
+                <CheckBox x:Name="PerformDiskCleanupCheckBox" Content="Perform Disk Cleanup" Margin="0,0,0,5" Foreground="black" FontWeight="Bold" FontSize="12"/>
+                <TextBlock Text="Performing disk cleanup removes unnecessary files, such as temporary files, system files, and cached data, that accumulate over time. This process frees up valuable disk space and helps improve system performance by eliminating clutter. It also ensures that your computer runs more efficiently, allowing it to operate faster and with less strain on storage resources." Margin="20  0 5 5 " FontSize="10px" TextWrapping="Wrap"></TextBlock>
+
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="1">
+                <!-- Checkbox -->
+                <CheckBox x:Name="TermsCheckBox" VerticalAlignment="Center" Margin="5,0,10,0"/>
+
+                <!-- Terms and Conditions Text with Hyperlink -->
+                <TextBlock VerticalAlignment="Center">
+        <Run Text="I agree to the "/>
+        <Hyperlink NavigateUri="https://www.example.com" RequestNavigate="Hyperlink_RequestNavigate">
+            Terms and Conditions
+        </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+
+
+            <!-- Buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10" Grid.Row="2">
+                <Button Content="Back" Click="BackButton_Click" Width="100" Margin="5" Background="#007ACC" Foreground="White" Padding="10"/>
+                <Button Content="Start" Click="StartButton_Click" Width="100" Margin="5" Background="#007ACC" Foreground="White" Padding="10"/>
+        </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

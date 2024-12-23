@@ -1,0 +1,49 @@
+﻿<Window x:Class="SystemOptimizerUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="System Optimizer" WindowStartupLocation="CenterScreen" Height="450" Width="800">
+    <Grid Background="#e8e8e8" >
+        <!-- Define two columns: one for the photo and one for the content -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <!-- Left Half for Photo -->
+            <ColumnDefinition Width="2*"/>
+            <!-- Right Half for Options -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Half: Display a photo -->
+        <Image Grid.Column="0" Source="/Image/temp.jpeg" Stretch="UniformToFill"/>
+        <!-- Right Half: Two sections -->
+        <Grid Grid.Column="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <!-- Top section -->
+                <RowDefinition Height="auto" />
+                
+                <RowDefinition Height="auto" />
+                <!-- Bottom section -->
+            </Grid.RowDefinitions>
+
+            <!-- Top Section: Navigation buttons -->
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+                <TextBlock Text="System Health Check and Optimization" FontSize="22" FontWeight="Bold" Foreground="#595757" Margin="0,0,0,20" TextAlignment="Center" />
+                <Button Content="Check Space of Disk" Style="{StaticResource CoolButtonStyle}" Click="CheckDiskSpace_Click" />
+                <Button Content="Monitor CPU Usage" Style="{StaticResource CoolButtonStyle}" Click="MonitorCPUUsage_Click" />
+            </StackPanel>
+
+
+            <!-- Bottom Section: Checkbox options -->
+            <StackPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                <TextBlock Text="• Ensure your system runs smoothly by enabling the optimization features above. Click 'Next' to proceed."
+           FontSize="14" FontWeight= "DemiBold" Margin="0,0,0,10" Foreground="#d62206" 
+           TextWrapping="Wrap"/>
+
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right" Margin="10">
+                <Button Content="Back"  Click="BackButton_Click" HorizontalAlignment="Right" Margin="5" Background="#007ACC" Width="100px" Foreground="White" Padding="10"/>
+                <Button Content="Next"  Click="NextButton_Click" HorizontalAlignment="Right" Width="100px" Margin="5" Background="#007ACC"  Foreground="White" Padding="10"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

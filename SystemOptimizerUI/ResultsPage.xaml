@@ -1,0 +1,46 @@
+﻿<Window x:Class="SystemOptimizerUI.ResultsPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Results" WindowStartupLocation="CenterScreen" Height="450" Width="800">
+
+    <Grid Background="#e8e8e8" >
+        <!-- Define two columns: one for the photo and one for the content -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <!-- Left half for the photo -->
+            <ColumnDefinition Width="2*" />
+            <!-- Right half for content -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Half: Display the photo -->
+        <Border Grid.Column="0" Margin="0" Background="#f0f0f0">
+            <Border.Effect>
+                <DropShadowEffect Color="Black"  ShadowDepth="10" BlurRadius="50" Opacity="1" />
+            </Border.Effect>
+            <Image Source="/Image/space.png" Stretch="UniformToFill" Margin="0,0,-56,0"  />
+        </Border>
+
+        <!-- Right Half: Two sections -->
+        <Grid Grid.Column="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <!-- Top section -->
+                <RowDefinition Height="2*" />
+
+                <RowDefinition Height="auto" />
+                <!-- Bottom section -->
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Margin="0 100 0 0 " Source="/Image/tick.png" Stretch="Uniform" Width="100px"></Image>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" >
+                <TextBlock Text="All tasks completed successfully!" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0, 0, 0, 10"/>
+                <TextBlock Text="Your system has been optimized." FontSize="14" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal"
+        HorizontalAlignment="Right" Margin="10">
+                <Button Content="Back" HorizontalAlignment="Right" Width="100px" Margin="5" Background="#007ACC"  Foreground="White" Padding="10" Click="BackButton_Click" />
+                <Button Content="Finish" HorizontalAlignment="Right" Width="100px" Margin="5" Background="#007ACC"  Foreground="White" Padding="10" Click="FinishButton_Click" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

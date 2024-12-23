@@ -1,0 +1,65 @@
+﻿<Window x:Class="SystemOptimizerUI.Introduction"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemOptimizerUI"
+        mc:Ignorable="d"
+        Title="Introduction" WindowStartupLocation="CenterScreen" Height="450" Width="800">
+    <Grid Background="#e8e8e8" >
+        <!-- Define two columns: one for the photo and one for the content -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <!-- Left Half for Photo -->
+            <ColumnDefinition Width="2*"/>
+            <!-- Right Half for Options -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Half: Display the photo -->
+
+        <Image Grid.Column="0" Source="/Image/intro.jpeg" Stretch="UniformToFill" />
+
+        <!-- Right Half: Two sections -->
+        <Grid Grid.Column="1" Margin="10 0 0 0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <!-- Top section -->
+                <RowDefinition Height="auto" />
+
+                <RowDefinition Height="auto" />
+                <!-- Bottom section -->
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+            <!-- Right Column: Introduction Text -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <!-- Top section -->
+                    <RowDefinition Height="2*" />
+                    <!-- Bottom section -->
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" 
+           Text="Welcome to Lishbostechnologies!" 
+           TextWrapping="Wrap" 
+           FontSize="24" 
+           FontWeight="Bold" 
+           Margin="0 35 0 0" 
+           HorizontalAlignment="Left"  
+           Foreground="#2b1515" 
+           FontFamily="Segoe UI">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform Y="-20"/>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+
+                <TextBlock Grid.Row="1" Text="Unlock the full potential of your system with a comprehensive suite of powerful tools designed to optimize performance, enhance efficiency, and simplify your digital experience. Take control of your system's health and functionality with features that allow you to clean unnecessary files, manage startup programs, and perform advanced disk cleanup. Explore these features today to make your system run faster, smoother, and more reliably, ensuring an enhanced user experience every time you power on your device."
+                   TextWrapping="Wrap" FontSize="13" Margin="0 0 12 0" Foreground="#595757" />
+            </Grid>
+            <!-- Bottom Row: Buttons -->
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right" Margin="10">
+                <Button Content="Exit" HorizontalAlignment="Right" Width="100px" Margin="5" Background="#007ACC"  Foreground="White" Padding="10" Click="ExitButton_Click" />
+                <Button Content="Next" HorizontalAlignment="Right" Width="100px" Margin="5" Background="#007ACC"  Foreground="White" Padding="10" Click="NextButton_Click" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
